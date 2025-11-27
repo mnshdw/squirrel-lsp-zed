@@ -20,19 +20,18 @@ impl SquirrelExtension {
         }
 
         // Check LSP settings for custom binary path
-        if let Some(lsp_settings) = LspSettings::for_worktree(SERVER_BINARY_NAME, worktree).ok() {
-            if let Some(binary) = lsp_settings.binary {
-                if let Some(path) = binary.path {
-                    return Ok(path);
-                }
-            }
+        if let Some(lsp_settings) = LspSettings::for_worktree(SERVER_BINARY_NAME, worktree).ok()
+            && let Some(binary) = lsp_settings.binary
+            && let Some(path) = binary.path
+        {
+            return Ok(path);
         }
 
         // Use cached path if available
-        if let Some(path) = &self.cached_binary_path {
-            if fs::metadata(path).map(|m| m.is_file()).unwrap_or(false) {
-                return Ok(path.clone());
-            }
+        if let Some(path) = &self.cached_binary_path
+            && fs::metadata(path).map(|m| m.is_file()).unwrap_or(false)
+        {
+            return Ok(path.clone());
         }
 
         // Download from GitHub releases
