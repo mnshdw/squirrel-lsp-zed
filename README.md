@@ -53,11 +53,10 @@ You can configure the extension in your Zed settings (`~/.config/zed/settings.js
 To build the extension locally:
 
 ```bash
-cd zed-extension
 cargo build --release --target wasm32-wasip1
 ```
 
 To test as a dev extension:
 1. Open Zed
 2. Command palette → "zed: install dev extension"
-3. Select the `zed-extension` directory
+3. Select this repository's root directory
