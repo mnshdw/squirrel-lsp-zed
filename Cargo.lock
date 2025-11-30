@@ -508,7 +508,7 @@ dependencies = [
 
 [[package]]
 name = "squirrel-zed-extension"
-version = "0.28.0"
+version = "0.1.0"
 dependencies = [
  "zed_extension_api",
 ]

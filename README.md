@@ -3,7 +3,7 @@
 This extension provides Squirrel language support for the [Zed](https://zed.dev) editor, including:
 
 - Syntax highlighting via tree-sitter
-- Language Server Protocol (LSP) support via `squirrel-lsp`
+- Language Server Protocol (LSP) support via [squirrel-lsp](https://github.com/mnshdw/squirrel-lsp)
 - Code formatting, diagnostics, and code actions
 
 ## Installation
